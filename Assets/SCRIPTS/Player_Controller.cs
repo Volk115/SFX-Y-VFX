@@ -19,8 +19,8 @@ public class Player_Controller : MonoBehaviour
     {
         //gradevad y salto
         playerRigidbody = GetComponent<Rigidbody>();
-        Physics.gravity *= gravityModifier;
-
+        PlayerAnimator = GetComponent<Amimator>();
+        Physics.gravity *= gravityModifer;
         
     }
 
@@ -31,8 +31,8 @@ public class Player_Controller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isOnTheGround)
         {
             playerRigidbody.AddForce(Vector3.up * junpForce, ForceMode.Impulse);
+            playerAnimator.SetTrigger("Jump_trig");
             isOnTheGround = false;
-
         }
         
     }
@@ -51,10 +51,5 @@ public class Player_Controller : MonoBehaviour
             Debug.Log(message: "GAME OVER");
             Time.timeScale = 0;
         }
-
-
-
-
     }
-
 }
