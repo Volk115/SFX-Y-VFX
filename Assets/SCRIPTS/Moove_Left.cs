@@ -6,7 +6,7 @@ public class Moove_Left : MonoBehaviour
 {
     //VELOCIDAD A LA QUE SE MOVERA
     public float speed = 10f;
-    public PlayerController playerControllerScript;
+    public Player_Controller playerControllerScript;
 
     // Start is called before the first frame update
     void Start()

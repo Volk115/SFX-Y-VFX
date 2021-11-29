@@ -6,6 +6,9 @@ public class Player_Controller : MonoBehaviour
 {
     private Rigidbody playerRigidbody;
     //Fuerza del salto
+
+    public Animator PlayerAnimator;
+
     public float junpForce = 500;
 
     //Gravedad que afecta al sujeto
@@ -31,7 +34,7 @@ public class Player_Controller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isOnTheGround)
         {
             playerRigidbody.AddForce(Vector3.up * junpForce, ForceMode.Impulse);
-            playerAnimator.SetTrigger("Jump_trig");
+            PlayerAnimator.SetTrigger("Jump_trig");
             isOnTheGround = false;
         }
         
